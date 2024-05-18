@@ -1,54 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    background-image: linear-gradient(180deg, rgba(247,247,247,1) 23.8%, rgba(252,221,221,1) 92%);
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
-header {
-    background-color: #333;
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    height: 400px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.result img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.selections {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selection {
+    background-color: darksalmon;
+    border: 0;
+    border-radius: 4px;
     color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-main {
-    padding: 20px;
-}
-
-#search-container {
-    margin-bottom: 20px;
-}
-
-#search-input {
-    padding: 8px;
-    width: 200px;
-}
-
-#search-button {
-    padding: 8px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
     cursor: pointer;
 }
 
-#search-button:hover {
-    background-color: #0056b3;
+.selection:focus {
+    outline: none;
 }
 
-#gallery {
-    display: flex;
-    flex-wrap: wrap;
+/* .heart-icon {
+    fill: red;
+    width: 24px;
+    height: 24px;
+} */
+
+.heart-icon {
+    fill: rgb(18, 19, 18); /* Default color */
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease; /* Smooth transition */
 }
 
-.card {
-    width: 200px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
+.red-heart {
+    fill: red; /* Red color */
 }
 
-.card img {
-    width: 100%;
-    height: auto;
+
+.favorite-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
