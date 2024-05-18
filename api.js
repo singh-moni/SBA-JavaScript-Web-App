@@ -40,3 +40,23 @@ export async function fetchDogImage(breedId) {
         console.error('Error fetching dog image:', error);
     }
 }
+// New function to favorite a breed
+export async function favoriteBreed(breedId, type) {
+    const url = type === 'cat' ? 'https://api.thecatapi.com/v1/favourites' : 'https://api.thedogapi.com/v1/favourites';
+    const apiKey = type === 'cat' ? catApiKey : dogApiKey;
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKey
+            },
+            body: JSON.stringify({ image_id: breedId, sub_id: 'user123' })  // sub_id can be a unique user identifier
+        });
+        return response.json();
+    } catch (error) {
+        console.error('Error favoriting breed:', error);
+    }
+}
+
